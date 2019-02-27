@@ -10,13 +10,12 @@ var svg = d3.select("body").append("svg")
 
 var squareSide = 60;
 
-var gridScale = d3.scaleOrdinal()
-    .range([84, 168, 252, 336, 420, 504, 588, 672, 756, 840]);
+var gridScale = [84, 168, 252, 336, 420, 504, 588, 672, 756, 840];
 
 function show() {
     d3.selectAll("g > *").remove();
 
-    var maxColumns = 10;
+    var maxColumns = 9;
     var rowCounter = 0;
     var columnCounter = 0;
 
@@ -36,22 +35,28 @@ function show() {
         .attr("width", squareSide)
         .attr("height", squareSide)
         .attr("x", function () {
+            currentColumn = columnCounter;
             if (columnCounter < maxColumns) {
                 columnCounter++;
-                return gridScale(columnCounter);
+                return gridScale[currentColumn];
             } else {
                 columnCounter = 0;
-                return gridScale(columnCounter);
+                return gridScale[currentColumn];
             }
         })
-        .attr("y", function () {
-            if (columnCounter < maxColumns) {
+        .attr("y", function (d, i) {
+            if (i == 0){
+                columnCounter = 0;
+            };
+            var currentColumn = columnCounter;
+            var currentRow = rowCounter;
+            if (currentColumn < maxColumns) {
                 columnCounter++;
-                return gridScale(rowCounter);
+                return gridScale[currentRow];
             } else {
                 columnCounter = 0;
                 rowCounter++;
-                return gridScale(rowCounter);
+                return gridScale[currentRow];
             }
         })
         .attr("fill", function (d) {
@@ -71,23 +76,29 @@ function show() {
         .text(function (d) {
             return d;
         })
-        .attr("x", function (d, i) {
-            if (columnCounter < maxColumns) {
+        .attr("x", function () {
+            var currentColumn = columnCounter;
+            if (currentColumn < maxColumns) {
                 columnCounter++;
-                return gridScale(columnCounter);
+                return gridScale[currentColumn];
             } else {
                 columnCounter = 0;
-                return gridScale(columnCounter);
+                return gridScale[currentColumn];
             }
         })
-        .attr("y", function () {
-            if (columnCounter < maxColumns) {
+        .attr("y", function (d, i) {
+            if (i == 0){
+                columnCounter = 0;
+            };
+            var currentColumn = columnCounter;
+            var currentRow = rowCounter;
+            if (currentColumn < maxColumns) {
                 columnCounter++;
-                return gridScale(rowCounter);
+                return gridScale[currentRow];
             } else {
                 columnCounter = 0;
                 rowCounter++;
-                return gridScale(rowCounter);
+                return gridScale[currentRow];
             }
         })
         .text(function (d) {
