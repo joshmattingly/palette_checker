@@ -2,12 +2,13 @@
 
 var margin = {top: 0, right: 0, bottom: 0, left: 0};
 
-var width = 960 - margin.left - margin.right,
+var width = 990 - margin.left - margin.right,
     height = 350 - margin.top - margin.bottom;
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom);
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("transform", "translate(300, 0)");
 
 var squareSide = 80;
 
@@ -82,6 +83,7 @@ function show() {
         .enter()
         .append("g")
         .append("text")
+        .attr("class", "text-monospace")
         .attr("font-size", "14px")
         .attr("font-family", "Arial")
         .text(function (d) {
