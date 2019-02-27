@@ -28,8 +28,12 @@ function show() {
     var dataset = inputString.split(',');
 
     var jsonDataset = JSON.stringify(dataset);
-    console.log(generateTemplate(jsonDataset, "testTemplate"));
 
+    /*
+        generate PBI theme code
+     */
+    var themeOutput = document.getElementById("themeCode");
+    themeOutput.value = generateTemplate(jsonDataset, "Test Template");
 
     var colorSwatch = svg.selectAll('rect')
         .data(dataset)
