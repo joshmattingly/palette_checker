@@ -9,27 +9,33 @@
     <link rel="stylesheet" type="text/css" href="palette_checker.css">
 </head>
 <body>
-<p>
-    How to use: enter one or more comma separated HEX values (ex: #C7EAE5) to return a grid of color swatches.
-</p>
-<p>
-    Quotation marks (' and ") as well as brackets [] will be removed.
-</p>
-Paste color code(s) here:<br>
-    <form id="theForm" action="javascript:show()" method="get">
-        <textarea name="color_palette" rows="8" cols="150"></textarea>
-        <br>
-        PBI Theme Name:
-        <input name="themeName">
-        <input type="submit" value="Submit">
-    </form>
-    <script src="template_generator.js"></script>
-    <script src="palette_checker.js"></script>
 
+<div class="padded">
+    <p>
+        How to use: enter one or more comma separated HEX values (ex: #C7EAE5) to return a grid of color swatches.
+    </p>
+    <p>
+        Quotation marks (' and ") as well as brackets [] will be removed.
+    </p>
+    Paste color code(s) here:<br>
+        <form id="theForm" action="javascript:show()" method="get">
+            <textarea name="color_palette" rows="8" cols="150"></textarea>
+            <br>
+            PBI Theme Name:
+            <input name="themeName">
+            <input type="submit" value="Submit">
+        </form>
+</div>
+        <script src="template_generator.js"></script>
+        <script src="palette_checker.js"></script>
 
-<p>Power BI Theme Code: </p>
-<p>(copy and paste into THEME_NAME.json)</p>
-<textarea id="themeCode" rows="25" cols="150"></textarea>
+<div class="padded">
+    <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/" target="_blank">
+        Take screenshot and verify colorblind accessibility (opens in new tab.)</a>
+    <p>Power BI Theme Code: </p>
+    <p>(copy and paste into THEME_NAME.json)</p>
+    <textarea id="themeCode" rows="23" cols="150"></textarea>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

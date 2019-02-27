@@ -15,7 +15,7 @@ var gridScale = [84, 168, 252, 336, 420, 504, 588, 672, 756, 840];
 function show() {
     d3.selectAll("g > *").remove();
 
-    var maxColumns = 8;
+    var maxColumns = 9;
     var rowCounter = 0;
     var columnCounter = 0;
 
