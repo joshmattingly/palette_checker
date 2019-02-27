@@ -2,20 +2,20 @@
 var margin = {top: 20, right: 10, bottom: 20, left: 10};
 
 var width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 600 - margin.top - margin.bottom;
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
-var squareSide = 60;
+var squareSide = 80;
 
 var gridScale = [84, 168, 252, 336, 420, 504, 588, 672, 756, 840];
 
 function show() {
     d3.selectAll("g > *").remove();
 
-    var maxColumns = 9;
+    var maxColumns = 3;
     var rowCounter = 0;
     var columnCounter = 0;
 
@@ -80,10 +80,10 @@ function show() {
             var currentColumn = columnCounter;
             if (currentColumn < maxColumns) {
                 columnCounter++;
-                return gridScale[currentColumn];
+                return gridScale[currentColumn] + 13;
             } else {
                 columnCounter = 0;
-                return gridScale[currentColumn];
+                return gridScale[currentColumn] + 13;
             }
         })
         .attr("y", function (d, i) {
@@ -94,11 +94,11 @@ function show() {
             var currentRow = rowCounter;
             if (currentColumn < maxColumns) {
                 columnCounter++;
-                return gridScale[currentRow];
+                return gridScale[currentRow] + 41;
             } else {
                 columnCounter = 0;
                 rowCounter++;
-                return gridScale[currentRow];
+                return gridScale[currentRow] + 41;
             }
         })
         .text(function (d) {
