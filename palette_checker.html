@@ -12,12 +12,24 @@
 
 <div class="container">
     <nav class="navbar navbar-expand-lg">
-        <p class="navbar-brand font-weight-bold">Palettizer</p>
+        <a class="navbar-brand font-weight-bold" href="https://github.com/joshmattingly/palette_checker"
+           target="_blank">Palettizer</a>
     <p class="navbar-subheading align-top font-italic">Creating Something From Something!</p>
     </nav>
 </div>
 
 <div class="container padded">
+    <p class="font-weight-bold">
+        Purpose:
+    </p>
+    <p>
+        Originally conceived to allow a company with multiple brands, and therefore multiple style-guides, to create
+        a multi-brand color palette for report generation and dashboard design.
+    </p>
+    <p>
+        Given a series of HEX keys, this app allows a user to generate a custom palette, which can then be used to
+        check overall asthetics as well as colorblind accessibility. Also creates a simple Power BI theme template.
+    </p>
 
     <p class="font-weight-bold">
         How to use:
@@ -56,6 +68,7 @@
 <div class="container padded">
     <p class="font-weight-bold">Exporting Theme to Power BI:</p>
     <p>Copy and paste into THEME_NAME.json</p>
+    <a href="https://docs.microsoft.com/en-us/power-bi/desktop-report-themes" target="_blank">Instructions for loading custom themes.</a>
     <textarea id="themeCode" rows="23" cols="150"></textarea>
 </div>
 
@@ -68,5 +81,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+<div class="container padded">
+    <a class="source-link" href="https://github.com/joshmattingly/palette_checker">Download the source code here.</a>
+</div>
 </body>
 </html>
