@@ -1,4 +1,4 @@
-# palette_checker
+# Palette Checker
 
 An app to view a pre-determined palette of color codes.
 
