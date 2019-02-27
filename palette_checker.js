@@ -26,6 +26,11 @@ function show() {
     var inputString = form.elements.color_palette.value.replace(/[\[\]"']+/g,"");
 
     var dataset = inputString.split(',');
+
+    var jsonDataset = JSON.stringify(dataset);
+    console.log(generateTemplate(jsonDataset, "testTemplate"));
+
+
     var colorSwatch = svg.selectAll('rect')
         .data(dataset)
         .enter()

@@ -2,18 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript Color Palette Checker</title>
+    <title>Color Palette Checker</title>
     <script src="d3.v5.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="palette_checker.css">
 </head>
 <body>
-Paste color code here:<br>
+<p>
+    How to use: enter one or more comma separated HEX values (ex: #C7EAE5) to return a grid of color swatches.
+</p>
+<p>
+    Quotation marks (' and ") as well as brackets [] will be removed.
+</p>
+Paste color code(s) here:<br>
     <form id="theForm" action="javascript:show()" method="get">
         <textarea name="color_palette" rows="8" cols="100"></textarea>
         <input type="submit" value="Submit">
     </form>
+    <script src="template_generator.js"></script>
     <script src="palette_checker.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
