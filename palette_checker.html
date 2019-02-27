@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Color Palette Checker</title>
+    <title>Palettizer</title>
     <script src="d3.v5.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,30 +10,49 @@
 </head>
 <body>
 
-<div class="padded">
+<div class="container">
+    <nav class="navbar navbar-expand-lg">
+        <p class="navbar-brand font-weight-bold">Palettizer</p>
+    <p class="navbar-subheading align-top font-italic">Creating Something From Something!</p>
+    </nav>
+</div>
+
+<div class="container padded">
+
+    <p class="font-weight-bold">
+        How to use:
+    </p>
     <p>
-        How to use: enter one or more comma separated HEX values (ex: #C7EAE5) to return a grid of color swatches.
+        Enter one or more comma separated HEX values (ex: #C7EAE5) to return a grid of color swatches.
     </p>
     <p>
         Quotation marks (' and ") as well as brackets [] will be removed.
     </p>
     Paste color code(s) here:<br>
-        <form id="theForm" action="javascript:show()" method="get">
+        <form id="theForm" action="javascript:show()">
             <textarea name="color_palette" rows="8" cols="150"></textarea>
             <br>
             PBI Theme Name:
             <input name="themeName">
-            <input type="submit" value="Submit">
+            <input class="btn-primary" type="submit" value="Submit">
         </form>
 </div>
-        <script src="template_generator.js"></script>
-        <script src="palette_checker.js"></script>
+<div class="container padded font-weight-bold">
+    <p>Your custom palette:</p>
+</div>
 
-<div class="padded">
-    <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/" target="_blank">
-        Take screenshot and verify colorblind accessibility (opens in new tab.)</a>
-    <p>Power BI Theme Code: </p>
-    <p>(copy and paste into THEME_NAME.json)</p>
+    <script src="template_generator.js"></script>
+    <script src="palette_checker.js"></script>
+
+<div class="container padded">
+    Take a screenshot, then click
+    <a class="font-weight-bold font-italic" href="https://www.color-blindness.com/coblis-color-blindness-simulator/" target="_blank">here</a>
+     to check for colorblind accessibility (opens in new tab.)
+</div>
+
+<div class="container padded">
+    <p class="font-weight-bold">Exporting Theme to Power BI:</p>
+    <p>Copy and paste into THEME_NAME.json</p>
     <textarea id="themeCode" rows="23" cols="150"></textarea>
 </div>
 

@@ -1,3 +1,17 @@
 .padded{
     padding: 10px;
 }
+
+.navbar-brand{
+    font-size:50px;
+    color: #0570b0;
+}
+
+.navbar-subheading{
+    font-size: 12px;
+}
+
+.btn-primary{
+    background-color: #0570b0;
+}
+

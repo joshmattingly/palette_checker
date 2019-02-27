@@ -1,3 +1,4 @@
+"use strict";
 
 var margin = {top: 0, right: 0, bottom: 0, left: 0};
 
@@ -45,7 +46,7 @@ function show() {
         .attr("width", squareSide)
         .attr("height", squareSide)
         .attr("x", function () {
-            currentColumn = columnCounter;
+            var currentColumn = columnCounter;
             if (columnCounter < maxColumns) {
                 columnCounter++;
                 return gridScale[currentColumn];

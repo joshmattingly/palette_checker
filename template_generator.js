@@ -2,8 +2,9 @@
 Power BI theme template
  */
 
+"use strict";
 
-generateTemplate = function(jsonString, templateName){
+var generateTemplate = function(jsonString, templateName){
     var backgroundColor = "#BFB8BF";
     var foregroundColor = "#003366";
     var tableAccentColor = "#214F80";
