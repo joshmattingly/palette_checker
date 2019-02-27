@@ -1,8 +1,8 @@
 
-var margin = {top: 20, right: 10, bottom: 20, left: 10};
+var margin = {top: 0, right: 0, bottom: 0, left: 0};
 
 var width = 960 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    height = 350 - margin.top - margin.bottom;
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -15,7 +15,7 @@ var gridScale = [84, 168, 252, 336, 420, 504, 588, 672, 756, 840];
 function show() {
     d3.selectAll("g > *").remove();
 
-    var maxColumns = 3;
+    var maxColumns = 8;
     var rowCounter = 0;
     var columnCounter = 0;
 
@@ -24,6 +24,7 @@ function show() {
 
     var form = document.getElementById("theForm");
     var inputString = form.elements.color_palette.value.replace(/[\[\]"']+/g,"");
+    var themeName = form.elements.themeName.value;
 
     var dataset = inputString.split(',');
 
@@ -33,7 +34,7 @@ function show() {
         generate PBI theme code
      */
     var themeOutput = document.getElementById("themeCode");
-    themeOutput.value = generateTemplate(jsonDataset, "Test Template");
+    themeOutput.value = generateTemplate(jsonDataset, themeName);
 
     var colorSwatch = svg.selectAll('rect')
         .data(dataset)

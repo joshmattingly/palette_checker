@@ -17,7 +17,10 @@
 </p>
 Paste color code(s) here:<br>
     <form id="theForm" action="javascript:show()" method="get">
-        <textarea name="color_palette" rows="8" cols="100"></textarea>
+        <textarea name="color_palette" rows="8" cols="150"></textarea>
+        <br>
+        PBI Theme Name:
+        <input name="themeName">
         <input type="submit" value="Submit">
     </form>
     <script src="template_generator.js"></script>
@@ -25,6 +28,7 @@ Paste color code(s) here:<br>
 
 
 <p>Power BI Theme Code: </p>
+<p>(copy and paste into THEME_NAME.json)</p>
 <textarea id="themeCode" rows="25" cols="150"></textarea>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
