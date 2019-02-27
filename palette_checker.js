@@ -1,3 +1,4 @@
+
 var margin = {top: 20, right: 10, bottom: 20, left: 10};
 
 var width = 960 - margin.left - margin.right,
@@ -12,20 +13,18 @@ var squareSide = 60;
 var gridScale = d3.scaleOrdinal()
     .range([84, 168, 252, 336, 420, 504, 588, 672, 756, 840]);
 
-
-
 function show() {
     d3.selectAll("g > *").remove();
 
     var maxColumns = 10;
-    var rowCounter = 2;
+    var rowCounter = 0;
     var columnCounter = 0;
 
     svg.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var form = document.getElementById("theForm");
-    var inputString = form.elements.color_palette.value.replace(/[\[\]']+/g,"");
+    var inputString = form.elements.color_palette.value.replace(/[\[\]"']+/g,"");
 
     var dataset = inputString.split(',');
     var colorSwatch = svg.selectAll('rect')
@@ -60,7 +59,7 @@ function show() {
         });
 
     columnCounter = 0;
-    rowCounter = 2;
+    rowCounter = 0;
 
     var swatchText = svg.selectAll("text")
         .data(dataset)
