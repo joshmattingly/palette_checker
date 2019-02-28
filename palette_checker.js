@@ -27,16 +27,15 @@ function show() {
     var form = document.getElementById("theForm");
     var inputString = form.elements.color_palette.value.replace(/[\[\]"']+/g,"");
     var themeName = form.elements.themeName.value;
+    var outputFormat = form.elements.outputFormat.value;
 
     var dataset = inputString.split(',');
-
-    var jsonDataset = JSON.stringify(dataset);
 
     /*
         generate PBI theme code
      */
     var themeOutput = document.getElementById("themeCode");
-    themeOutput.value = generateTemplate(jsonDataset, themeName);
+    themeOutput.value = generateTemplate(dataset, themeName, outputFormat);
 
     var colorSwatch = svg.selectAll('rect')
         .data(dataset)

@@ -44,11 +44,15 @@
         <form id="theForm" action="javascript:show()">
             <textarea name="color_palette" rows="8" cols="150"></textarea>
             <br>
-            PBI Theme Name:
+            Palette Name:
             <input name="themeName">
+            <select name="outputFormat">
+                <option value="pbi">Power BI</option>
+                <option value="tableau">Tableau</option>
+            </select>
             <input class="btn-primary" type="submit" value="Submit">
             <p class="navbar-subheading text-italic">
-                (after clicking Submit, scroll down for Power BI theme template.)
+                (after clicking Submit, scroll down theme/palette template.)
             </p>
         </form>
 </div>
@@ -66,9 +70,9 @@
 </div>
 
 <div class="container padded">
-    <p class="font-weight-bold">Exporting Theme to Power BI:</p>
-    <p>Copy and paste into THEME_NAME.json</p>
-    <a href="https://docs.microsoft.com/en-us/power-bi/desktop-report-themes" target="_blank">Instructions for loading custom themes.</a>
+    <p class="font-weight-bold">Palette Code:</p>
+    <a href="https://docs.microsoft.com/en-us/power-bi/desktop-report-themes" target="_blank">Instructions for loading custom Power BI themes.</a><br>
+    <a href="https://onlinehelp.tableau.com/current/pro/desktop/en-us/formatting_create_custom_colors.htm" target="_blank">Loading custom Tableau color palettes.</a><br>
     <textarea id="themeCode" rows="23" cols="150"></textarea>
 </div>
 
