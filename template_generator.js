@@ -32,5 +32,6 @@ var generateTemplate = function(jsonString, templateName){
         +"\t\}\n"
         +"\}";
 
+
     return template_string;
 }
