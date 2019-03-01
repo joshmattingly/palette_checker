@@ -25,7 +25,7 @@ function show() {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var form = document.getElementById("theForm");
-    var inputString = form.elements.color_palette.value.replace(/[\[\]"']+/g,"");
+    var inputString = form.elements.color_palette.value.replace(/[\[\]\s"']+/g,"");
     var themeName = form.elements.themeName.value;
     var outputFormat = form.elements.outputFormat.value;
 
